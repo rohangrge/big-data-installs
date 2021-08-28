@@ -37,9 +37,9 @@ mkdir dfsdata
 mkdir tmpdata
 mkdir dfsdata/datanode
 mkdir dfsdata/namenode
-  chown -R $USER:$USER /home/dfsdata/
-  chown -R $USER:$USER /home/dfsdata/datanode/
-  chown -R $USER:$USER /home/dfsdata/namenode/
+  chown  /home/dfsdata/
+  chown  /home/dfsdata/datanode/
+  chown  /home/dfsdata/namenode/
 
 
 # Setting up bashrc
