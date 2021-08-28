@@ -7,6 +7,7 @@ rm hadoop-*
 
 
 # Update stuff first
+DEBIAN_FRONTEND=noninteractive
   apt update -y
   apt upgrade -y
 
