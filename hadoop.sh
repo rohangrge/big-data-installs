@@ -28,8 +28,8 @@ chmod 0600 ~/.ssh/authorized_keys
 
 # Download Hadoop
 cd
-wget https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz -p /home/$USER/
-tar xzf /home/$USER/hadoop-3.2.2.tar.gz
+wget https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz -p /home/
+tar xzf /home/hadoop-3.2.2.tar.gz
 
 
 # Setting up Hadoop directories
@@ -37,13 +37,13 @@ mkdir dfsdata
 mkdir tmpdata
 mkdir dfsdata/datanode
 mkdir dfsdata/namenode
-  chown -R $USER:$USER /home/$USER/dfsdata/
-  chown -R $USER:$USER /home/$USER/dfsdata/datanode/
-  chown -R $USER:$USER /home/$USER/dfsdata/namenode/
+  chown -R $USER:$USER /home/dfsdata/
+  chown -R $USER:$USER /home/dfsdata/datanode/
+  chown -R $USER:$USER /home/dfsdata/namenode/
 
 
 # Setting up bashrc
-  echo "export HADOOP_HOME=/home/$USER/hadoop-3.2.2" >> ~/.bashrc
+  echo "export HADOOP_HOME=/home/hadoop-3.2.2" >> ~/.bashrc
 source ~/.bashrc
   echo "export HADOOP_INSTALL=$HADOOP_HOME" >> ~/.bashrc
   echo "export HADOOP_MAPRED_HOME=$HADOOP_HOME" >> ~/.bashrc
@@ -85,7 +85,7 @@ do
           echo "<configuration>" >> $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
           echo "<property>" >> $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
           echo "  <name>hadoop.tmp.dir</name>" >> $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
-          echo "  <value>/home/$USER/tmpdata</value>" >> $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
+          echo "  <value>/home/tmpdata</value>" >> $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
           echo "</property>" >> $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
           echo "<property>" >> $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
           echo "  <name>fs.default.name</name>" >> $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
@@ -113,11 +113,11 @@ do
           echo "<configuration>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
           echo "<property>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
           echo "  <name>dfs.name.dir</name>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
-          echo "  <value>/home/$USER/dfsdata/namenode</value>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
+          echo "  <value>/home/dfsdata/namenode</value>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
           echo "</property>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
           echo "<property>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
           echo "  <name>dfs.data.dir</name>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
-          echo "  <value>/home/$USER/dfsdata/datanode</value>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
+          echo "  <value>/home/dfsdata/datanode</value>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
           echo "</property>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
           echo "<property>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
           echo "  <name>dfs.replication</name>" >> $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
