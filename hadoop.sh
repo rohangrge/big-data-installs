@@ -28,7 +28,7 @@ chmod 0600 ~/.ssh/authorized_keys
 
 # Download Hadoop
 cd
-wget https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz /home/$USER/
+wget https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz -p /home/$USER/
 tar xzf /home/$USER/hadoop-3.2.2.tar.gz
 
 
